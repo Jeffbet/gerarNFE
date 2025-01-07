@@ -25,6 +25,7 @@ function gerarNotaFiscal() {
         itensList.appendChild(li);
     });
 
+    
     document.getElementById('irpfCalc').innerText = irpfCalc.toFixed(2);
     document.getElementById('pisCalc').innerText = pisCalc.toFixed(2);
     document.getElementById('cofinsCalc').innerText = cofinsCalc.toFixed(2);
@@ -35,6 +36,8 @@ function gerarNotaFiscal() {
 
     document.getElementById('resultado').style.display = 'block';
 }
+
+
 
 function baixarNotaFiscal() {
     const { jsPDF } = window.jspdf;
@@ -80,6 +83,7 @@ function baixarXML() {
   <ValorLiquido>${valorLiquido}</ValorLiquido>
 </NotaFiscal>`;
 
+    //gerar opcional xml
     const blob = new Blob([xmlContent], { type: 'application/xml' });
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);

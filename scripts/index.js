@@ -83,7 +83,7 @@ function baixarXML() {
   <ValorLiquido>${valorLiquido}</ValorLiquido>
 </NotaFiscal>`;
 
-    //gerar opcional xml
+
     const blob = new Blob([xmlContent], { type: 'application/xml' });
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);

@@ -35,7 +35,7 @@ Este é um projeto simples e funcional para a emissão de uma Nota Fiscal Eletr�
 - **CSS:** Estilo da interface.
 - **JavaScript:** Lógica de cálculo e interação.
 - **jsPDF:** Biblioteca para geração de PDF.
-- **GitHub Pages:** Para publicação do projeto (opcional).
+- **GitHub Pages:** Para publicação do projeto.
 
 ## Como Executar
 

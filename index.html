@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nota Fiscal de Serviço (NFS-e)</title>
+    <link rel="stylesheet" href="/styles/index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Emissão de Nota Fiscal de Serviço (NFS-e)</h1>
+        <form id="nfForm">
+            <div class="form-group">
+                <label for="valorVenda">Valor da Venda (R$):</label>
+                <input type="number" id="valorVenda" required step="0.01" min="0">
+            </div>
+            <div class="form-group">
+                <label for="itens">Itens Vendidos:</label>
+                <textarea id="itens" required placeholder="Ex: Produto A, Produto B, Produto C"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="irpf">Porcentagem do IRPF (%):</label>
+                <input type="number" id="irpf" required step="0.01" min="0">
+            </div>
+            <div class="form-group">
+                <label for="pis">Porcentagem do PIS (%):</label>
+                <input type="number" id="pis" required step="0.01" min="0">
+            </div>
+            <div class="form-group">
+                <label for="cofins">Porcentagem do COFINS (%):</label>
+                <input type="number" id="cofins" required step="0.01" min="0">
+            </div>
+            <div class="form-group">
+                <label for="inss">Porcentagem do INSS (%):</label>
+                <input type="number" id="inss" required step="0.01" min="0">
+            </div>
+            <div class="form-group">
+                <label for="issqn">Porcentagem do ISSQN (%):</label>
+                <input type="number" id="issqn" required step="0.01" min="0">
+            </div>
+            <button type="button" onclick="gerarNotaFiscal()">Gerar Nota Fiscal</button>
+        </form>
+
+        <div id="resultado" class="result" style="display: none;">
+            <h2>Nota Fiscal de Serviço</h2>
+            <p><strong>Valor da Venda:</strong> R$ <span id="valorVendaDisplay"></span></p>
+            <p><strong>Itens Vendidos:</strong></p>
+            <ul id="itensDisplay"></ul>
+            <p><strong>Impostos Calculados:</strong></p>
+            <ul>
+                <li>IRPF: R$ <span id="irpfCalc"></span></li>
+                <li>PIS: R$ <span id="pisCalc"></span></li>
+                <li>COFINS: R$ <span id="cofinsCalc"></span></li>
+                <li>INSS: R$ <span id="inssCalc"></span></li>
+                <li>ISSQN: R$ <span id="issqnCalc"></span></li>
+            </ul>
+            <p><strong>Valor Total dos Impostos:</strong> R$ <span id="totalImpostos"></span></p>
+            <p><strong>Valor Líquido:</strong> R$ <span id="valorLiquido"></span></p>
+            <button onclick="baixarNotaFiscal()">Baixar PDF</button>
+            <button onclick="baixarXML()">Baixar XML</button>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="/scripts/index.js"></script>
+</body>
+</html>
